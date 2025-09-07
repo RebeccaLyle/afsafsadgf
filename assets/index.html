@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rebecca Lyle — Portfolio & Resume</title>
+  <meta name="description" content="Finance (UofT MFin) · Spot gold intraday trading · Real estate · Perfume & fragrance factory.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="assets/profile.jpg">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="sticky">
+    <div class="container inner">
+      <a class="brand" href="#top"><img src="assets/favicon.svg" alt="" aria-hidden="true"><span>Rebecca Lyle</span></a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container main">
+    <section class="hero">
+      <img src="assets/profile.jpg" alt="Portrait of Rebecca Lyle" class="avatar">
+      <div>
+        <h1>Rebecca Lyle</h1>
+        <p class="lead">Finance (UofT MFin) · Spot Gold Intraday Trading · Real Estate · Perfume & Fragrance Factory</p>
+        <div class="meta">
+          <span class="chip">Risk & Money Management</span>
+          <span class="chip">Cross-border Ops</span>
+          <span class="chip">Brand & Supply Chain</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <p>I build resilient systems across <strong>finance, real estate, and fragrance</strong>. With a Master of Finance from the University of Toronto, I combine analytical rigor with entrepreneurial execution. My focus is on disciplined trading, structured investments, and building brands with long-term impact.</p>
+          <ul class="list">
+            <li>• Master of Finance (UofT)</li>
+            <li>• Experience across UK, France, and Spain</li>
+            <li>• Skilled in financial modeling, supply chain, and brand strategy</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <strong>Founder / Lead — Fragrance Brand</strong>
+          <small class="muted">2022 — Present · UK / FR / ES</small>
+          <ul class="list">
+            <li>Built the brand stack end-to-end: website, packaging, supply chain, and retail channels.</li>
+            <li>Crafted brand narrative & product lineup; launched CMS-powered content & gifting systems.</li>
+            <li>Expanded distribution into 3 EU markets within the first 18 months.</li>
+            <li>Established 2 stable raw-material partnerships to secure quality and pricing.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Investment & Asset Allocation — Self-managed</strong>
+          <small class="muted">2019 — 2022 · Remote</small>
+          <ul class="list">
+            <li>Blended spot gold, digital assets, and real estate to create a balanced cash-flow loop.</li>
+            <li>Designed and executed risk-hedging playbooks informed by macro + technical analysis.</li>
+            <li>Achieved average annual portfolio yield +12% with conservative drawdown limits.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <strong>Spot Gold Intraday Trading</strong>
+          <small class="muted">2025</small>
+          <p class="muted">Designed disciplined entry/exit strategies with strict risk controls. Built structured post-trade review framework. Applied multi-timeframe analysis for precision execution.</p>
+        </div>
+        <div class="card">
+          <strong>Real Estate</strong>
+          <small class="muted">Ongoing</small>
+          <p class="muted">Acquired and managed prime & seaside assets with focus on compliance and tax efficiency. Balanced short-term cash flow with long-term appreciation. Conducted cross-border due diligence and valuation.</p>
+        </div>
+        <div class="card">
+          <strong>Perfume & Fragrance Factory</strong>
+          <small class="muted">Active</small>
+          <p class="muted">Established reliable raw-material sourcing and QA protocols. Launched scalable product lines with clear brand storytelling. Built distribution partnerships across multiple EU markets.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="grid cols-3">
+        <div class="card"><strong>Finance & Investment</strong><p class="muted">Cash-flow modeling · Risk & portfolio management</p></div>
+        <div class="card"><strong>Trading Discipline</strong><p class="muted">Intraday strategy · Macro + technical analysis</p></div>
+        <div class="card"><strong>Brand & Operations</strong><p class="muted">Storytelling · Product strategy · Supply-chain reliability</p></div>
+        <div class="card"><strong>Technology</strong><p class="muted">HTML/CSS/JS · Vercel/Netlify deployments</p></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:Rebecca09101984@Gmail.com">Rebecca09101984@Gmail.com</a></p>
+      <p class="small muted">Available for remote/on-site collaboration across EU & UK time zones.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Rebecca Lyle · All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const links = Array.from(document.querySelectorAll('nav a'));
+    const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+    const onScroll = () => {
+      let idx = 0; const fromTop = scrollY + 90;
+      sections.forEach((sec,i)=>{ if(sec && sec.offsetTop <= fromTop) idx = i; });
+      links.forEach((a,i)=> a.classList.toggle('active', i===idx));
+    };
+    document.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  </script>
+</body>
+</html>
